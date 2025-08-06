@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ASSLINQ;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Linq1
 {
@@ -6,7 +9,15 @@ namespace Linq1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            #region LINQ - Restriction Operators
+            #region 1
+            List<Product> products= ListGenerators.ProductList;
+            var OutOfStock = products.Where(p => p.UnitsInStock==0);
+            foreach (var product in OutOfStock) {
+                Console.WriteLine(product);
+            }
+            #endregion
+            #endregion
         }
     }
 }
