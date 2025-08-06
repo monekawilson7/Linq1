@@ -17,6 +17,21 @@ namespace Linq1
                 Console.WriteLine(product);
             }
             #endregion
+            #region 2
+            var filter = products.Where(p => p.UnitsInStock!=0 && p.UnitPrice > 3m);
+            foreach (var product in filter) {
+                Console.WriteLine(product);
+            }
+            #endregion
+            #region 3
+            string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            var result = Arr.Select((name, index) => new { Name = name, Index = index })
+                .Where(x => x.Name.Length < x.Index)
+                .Select(x => x.Index);
+            foreach (var n in result) {
+                Console.WriteLine(n);
+            }
+            #endregion
             #endregion
         }
     }
