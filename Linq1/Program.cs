@@ -33,6 +33,17 @@ namespace Linq1
             }
             #endregion
             #endregion
+            #region Element Operators
+            #region 1
+            var firstOutOfStock = (from p in products
+                                   where p.UnitsInStock == 0
+                                   select p).FirstOrDefault(p => p.UnitsInStock ==0);
+            if (firstOutOfStock != null)
+                Console.WriteLine(firstOutOfStock);
+            else
+                Console.WriteLine("No out-of-stock products found.");
+            #endregion
+            #endregion
         }
     }
 }
