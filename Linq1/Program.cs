@@ -50,6 +50,17 @@ namespace Linq1
             else
                 Console.WriteLine("No product found with price > 1000");
             #endregion
+            #region 3
+            int[] array = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var num = array.Where(n => n> 5).ToList();
+            if (num.Count >= 2)
+            {
+                int secondNum = num[1];
+                Console.WriteLine(secondNum);
+            }
+            else
+                Console.WriteLine("not found");
+            #endregion
             #endregion
         }
     }
