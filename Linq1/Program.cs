@@ -43,6 +43,13 @@ namespace Linq1
             else
                 Console.WriteLine("No out-of-stock products found.");
             #endregion
+            #region 2
+            var resultForProducts = products.Where(p => p.UnitPrice > 1000).ToList();
+            if (resultForProducts != null)
+                Console.WriteLine(resultForProducts);
+            else
+                Console.WriteLine("No product found with price > 1000");
+            #endregion
             #endregion
         }
     }
